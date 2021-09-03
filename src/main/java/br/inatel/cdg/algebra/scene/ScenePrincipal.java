@@ -1,5 +1,6 @@
 package br.inatel.cdg.algebra.scene;
 
+import br.inatel.cdg.algebra.reta.Reta;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -13,6 +14,7 @@ public class ScenePrincipal {
     private Button btnCalcCoefAngular, btnCalcCoefLinear; //Button representa botoes
     private Label labelP1x,labelP1y,labelP2x,labelP2y; //Label representam rótulos
     private TextField txtP1x,txtP1y,txtP2x,txtP2y,txtCL,txtCA; //TextField Representam áreas de texto
+    private Reta reta;
 
     public void criaScenePrincipal(Stage stage){
 
@@ -72,7 +74,8 @@ public class ScenePrincipal {
         //Criamos a ação que o botão responderá as ser pressionado
         btnCalcCoefAngular.setOnAction(evento -> {
             //Aqui dentro é a ação que será executado ao pressionar o botão
-            txtCA.setText("Coef Angular: ");//Acessamos o componente textField1, pegamos o texto e colocaos em textField2
+            reta = new Reta(txtP1x.getText(),txtP1y.getText(),txtP2x.getText(),txtP2y.getText());
+            txtCA.setText("Coef Angular: " + reta.coefAng());
         });
 
         //Criamos o botão
@@ -80,7 +83,8 @@ public class ScenePrincipal {
         //Criamos a ação que o botão responderá as ser pressionado
         btnCalcCoefLinear.setOnAction(evento -> {
             //Aqui dentro é a ação que será executado ao pressionar o botão
-            txtCL.setText("Coef Linear: ");//Acessamos o componente textField1, pegamos o texto e colocaos em textField2
+            reta = new Reta(txtP1x.getText(),txtP1y.getText(),txtP2x.getText(),txtP2y.getText());
+            txtCL.setText("Coef Linear: " + reta.coefLin());
         });
 
         HBox gHBot = new HBox(btnCalcCoefAngular, btnCalcCoefLinear); //Passamos no construtor todos os elementos. Você poderá criar vários grupos horizontais

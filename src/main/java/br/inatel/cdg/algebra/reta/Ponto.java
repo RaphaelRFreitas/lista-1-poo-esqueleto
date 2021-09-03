@@ -5,5 +5,9 @@ public class Ponto {
     public double y;
 
 
+    public Ponto(double px, double py) {
+        this.x = px;
+        this.y = py;
+    }
 
 }
