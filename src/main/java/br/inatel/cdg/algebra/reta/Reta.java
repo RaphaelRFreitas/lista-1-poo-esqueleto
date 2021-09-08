@@ -6,9 +6,9 @@ public class Reta {
 
     public Reta(String p1x,String p1y,String p2x,String p2y) {
         double p1xd = Double.parseDouble(p1x);
-        double p2xd = Double.parseDouble(p1x);
-        double p1yd = Double.parseDouble(p1x);
-        double p2yd = Double.parseDouble(p1x);
+        double p2xd = Double.parseDouble(p2x);
+        double p1yd = Double.parseDouble(p1y);
+        double p2yd = Double.parseDouble(p2y);
         p1 = new Ponto(p1xd,p1yd);
         p2 = new Ponto(p2xd,p2yd);
     }
